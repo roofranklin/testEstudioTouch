@@ -1,3 +1,64 @@
-h1{
-    color:red;
+//Main CSS 
+     
+//Fonts
+$ubuntu: 'Ubuntu', sans-serif;
+
+
+// Paleta de Cores da Página 
+$darkBG:#222222;
+$lightBG: #ffffff;
+$fontDefault: #242424;
+$fontBlack: #121212;
+
+body {
+    background-color:$darkBG;
+    font-family: $ubuntu;
+    font-size: 13px;
+    color:$fontDefault;
 }
+
+.container-fluid, .navbar{
+    background-color: $lightBG !important;
+}
+
+.container-fluid{
+    margin-top:10px;
+}
+
+.nav-link{
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color:$fontBlack !important;
+    font-size:11px !important;
+    margin-left:35px;
+}
+
+.first{
+    margin-left:0px !important;
+}
+
+.nav-link i{
+    padding-right: 5px;
+}
+
+.logo{
+    padding: 70px 0 70px 0;
+}
+
+.breadcrumb{
+    background-color: $lightBG;
+    color:$fontBlack !important;
+    font-size:11px !important;
+}
+
+    .breadcrumb .first-item::before{
+        content: none !important;
+    }
+
+    .breadcrumb-item a{
+        color: $fontBlack;
+    }
+
+    .breadcrumb-item::before {
+        content: url(../img/breadcrumbs-arrow.png) !important;
+    }
