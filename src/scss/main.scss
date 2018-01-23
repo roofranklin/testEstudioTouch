@@ -14,6 +14,7 @@ $fontBlack: #121212;
 $fontLight: #969696;
 $fontGold: #D39850;
 $purpleButton: #951A91;
+$greenButton: #0BBBA8;
 
 body {
     background-color:$darkBG;
@@ -164,3 +165,63 @@ small{
     padding-left:15px;
     font-size:14px;
 }
+
+.btn-shipping-calc{
+    color: $greenButton;
+    background-color:white !important;
+    font-size:13px !important;
+    border:0px;
+}
+
+.shipping-results li{
+    color: $fontBlack;
+    list-style-type: none;
+    margin-left:-55px;
+}
+
+.similar-products-title h1{
+    color:$fontBlack;
+    text-transform: uppercase;
+    font-family: $ubuntu;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    padding:40px 0 30px 0;
+    background-image: url(../img/bg-title.png);
+    background-position:center bottom;
+    background-repeat: no-repeat;
+}
+
+.similar-products{
+    margin-top:45px;
+}
+
+    .similar-products a{
+        color: $fontBlack;
+        text-decoration: none;
+    }
+
+    .similar-products h2{
+        font-family: $playFair;
+        font-size: 20px;
+    }
+
+    .similar-products h3{
+        font-family: $lato;
+        font-weight: 300;
+        font-size: 18px;
+        color: $fontGold;
+    }
+
+    .similar-products .badge{
+        font-family: $ubuntu;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        position: absolute;
+        border-radius: 0px;
+        width: 75px;
+        height:21px;
+        margin-top:15px;
+        font-size: 13px;
+        font-weight:bold;
+        right:15px;
+    }
