@@ -2,6 +2,8 @@
      
 //Fonts
 $ubuntu: 'Ubuntu', sans-serif;
+$playFair: 'Playfair Display', serif;
+$lato: 'Lato', sans-serif;
 
 
 // Paleta de Cores da Página 
@@ -9,6 +11,9 @@ $darkBG:#222222;
 $lightBG: #ffffff;
 $fontDefault: #242424;
 $fontBlack: #121212;
+$fontLight: #969696;
+$fontGold: #D39850;
+$purpleButton: #951A91;
 
 body {
     background-color:$darkBG;
@@ -62,3 +67,84 @@ body {
     .breadcrumb-item::before {
         content: url(../img/breadcrumbs-arrow.png) !important;
     }
+
+small{
+    color: $fontLight;
+}
+
+.social-media-icons{
+    margin-top:20px;
+}
+
+.pinterest-icon, .twitter-icon{
+    margin-left:30px;
+}
+
+.product-details{
+    margin-top:30px;
+}
+
+    .product-details h1{
+        font-family: $playFair;
+        font-size: 42px;
+    }
+
+    .price{
+        color:$fontGold;
+        font-weight: 300;
+        font-family: $lato;
+        font-size: 36px;
+    }
+
+    .old-price{
+        color:$fontLight;
+        font-weight: 400;
+        font-family: $ubuntu;
+        font-size: 18px;
+        text-decoration: line-through;
+    }
+
+    .product-details p{
+        font-family: $ubuntu;
+        font-size: 13px;
+        color: $fontLight;
+    }
+
+    .product-details .form-group{
+        margin-left:-15px;
+    }
+
+    .product-details label{
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color:$fontBlack !important;
+        font-size:11px !important;
+    }
+
+    .product-details select{
+        letter-spacing: 0.1em;
+        color:$fontBlack !important;
+        font-size:12px !important;
+    }
+
+    .add-to-cart{
+        background-color: $purpleButton;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color:white !important;
+        font-size:13px !important;
+        border-radius:0px;
+        width: 250px;
+        height:50px;
+    }
+
+    .add-to-wishlist{
+        margin-left:30px;
+        color:$fontDefault;
+        text-decoration:none;
+        font-size: 14px;
+    }
+
+        .add-to-wishlist img{
+            margin-right:7px;
+        }
