@@ -203,6 +203,7 @@ small{
     .similar-products h2{
         font-family: $playFair;
         font-size: 20px;
+        min-height:50px;
     }
 
     .similar-products h3{
@@ -225,3 +226,62 @@ small{
         font-weight:bold;
         right:15px;
     }
+
+.footer{
+    background-color: $darkBG;
+    border-top:5px solid $greenButton;
+    padding-bottom:40px;
+}
+
+    .footer h2{
+        color:#ffffff;
+        font-family: $lato;
+        text-transform: uppercase;
+        font-size: 18px;
+        line-height:36px;
+        margin-top:40px;
+    }
+
+    .footer li{
+        list-style-type: none;
+        margin-left:-40px;
+    }
+
+    .footer a{
+        color:$fontLight;
+        font-size: 14px;
+        line-height:28px;
+    }
+
+    .footer p{
+        margin-top:15px;
+        color:$fontLight;
+        font-size: 11px;
+        line-height:15px;
+    }
+
+    .footer input{
+        border-radius:0px;
+        border:none;
+        background-color: #404040;
+        color: $fontLight;
+        font-size: 13px;
+    }
+
+    .footer button{
+        border-radius:0px;
+        text-transform: uppercase;
+        background-color: $darkBG;
+        color: white;
+        border:1px solid white;
+        font-size: 13px;
+        margin-top:10px;
+    }
+
+.footer-text{
+    margin-top:30px;
+}
+
+.flags{
+    margin-top:30px;
+}
