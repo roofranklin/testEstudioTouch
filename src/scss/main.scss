@@ -69,6 +69,17 @@ body {
         content: url(../img/breadcrumbs-arrow.png) !important;
     }
 
+.thumbs img{
+    margin-left:13px;
+    margin-top:10px;
+    cursor: pointer;
+    border-bottom:5px solid white;
+}
+
+.thumbs img:hover{
+    border-bottom:5px solid $darkBG;
+}
+
 small{
     color: $fontLight;
 }
