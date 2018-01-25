@@ -155,10 +155,22 @@ small{
         color:$fontDefault;
         text-decoration:none;
         font-size: 14px;
+        cursor: pointer;
+        border:none;
+        background-color: white;
     }
 
         .add-to-wishlist img{
             margin-right:7px;
+        }
+
+    #wishlist{
+        margin-top:15px;
+    }
+
+        #wishlist p{
+            color: $purpleButton;
+            font-style: oblique;
         }
 
 .product-description p{
