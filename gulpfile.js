@@ -17,7 +17,6 @@ gulp.task('serve', function () {
             baseDir: "./"
         }
     });
-
     gulp.watch("*.html").on("change", reload);
 });
 

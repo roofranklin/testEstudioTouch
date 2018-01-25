@@ -6,7 +6,7 @@ $playFair: 'Playfair Display', serif;
 $lato: 'Lato', sans-serif;
 
 
-// Paleta de Cores da Página 
+// Colors 
 $darkBG:#222222;
 $lightBG: #ffffff;
 $fontDefault: #242424;
@@ -16,6 +16,7 @@ $fontGold: #D39850;
 $purpleButton: #951A91;
 $greenButton: #0BBBA8;
 
+// Body
 body {
     background-color:$darkBG;
     font-family: $ubuntu;
@@ -31,6 +32,7 @@ body {
     margin-top:10px;
 }
 
+//Header
 .nav-link{
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -51,6 +53,7 @@ body {
     padding: 70px 0 70px 0;
 }
 
+//Content
 .breadcrumb{
     background-color: $lightBG;
     color:$fontBlack !important;
@@ -196,11 +199,15 @@ small{
     border:0px;
 }
 
-.shipping-results li{
-    color: $fontBlack;
-    list-style-type: none;
-    margin-left:-55px;
+#shippingResults{
+    display:none;
 }
+
+    #shippingResults li{
+        color: $fontBlack;
+        list-style-type: none;
+        margin-left:-55px;
+    }
 
 .similar-products-title h1{
     color:$fontBlack;

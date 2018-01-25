@@ -16,6 +16,7 @@
     <!--  Font Awesome -->
     <link rel="stylesheet" href="src/font-awesome-4.7.0/css/font-awesome.min.css">
 
+    <!-- Main CSS -->
     <link rel="stylesheet" href="css/main.css">
     
     <title>Loja da Vanessa</title>
@@ -24,7 +25,9 @@
     <div class="row justify-content-md-center">
       <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12">
         <div class="container-fluid">
+          <!-- Begin Header -->
           <div class="row justify-content-center">
+            <!-- Begin Navbar -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -47,12 +50,15 @@
                 </ul>
               </div>
             </nav>
+            <!-- End Navbar -->
           </div>
           <div class="row justify-content-center">
               <img class="logo" src="img/logo-l.png" class="img-fluid" alt="Loja da Vanessa">
           </div>
+          <!-- End Header / Begin Content -->
           <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12">
+              <!-- Begin Breadcrumb -->
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item first-item"><a href="#">Home</a></li>
@@ -61,57 +67,56 @@
                   <li ng-repeat="name in names" class="breadcrumb-item active" aria-current="page">{{ name }}</li>
                 </ol>
               </nav>
+              <!-- End Breadcrumb -->
             </div>   
           </div>
           <div class="row justify-content-center">
+            <!-- Begin Image Product -->
             <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-xs-12">
                 <img  id="zoom_01"
                       src="img/image-pdp-desktop.png" 
                       class="img-fluid"
                       data-zoom-image="img/large/image-pdp-desktop.jpg" 
                       alt="Vestido Must-Have Sweatshirt">
-
+                <!-- Product thumbs -->
                 <div class="row thumbs">
-
-                    <img id="thumb_1" src="img/thumbs.png" alt="Vestido Must-Have Sewatshirt 01" class="img-fluid">
-                    <img id="thumb_2" src="img/thumbs-2.png" alt="Vestido Must-Have Sewatshirt 02" class="img-fluid">
-                    <img id="thumb_3" src="img/thumbs-3.png" alt="Vestido Must-Have Sewatshirt 03" class="img-fluid">
-
+                  <img id="thumb_1" src="img/thumbs.png" alt="Vestido Must-Have Sewatshirt 01" class="img-fluid">
+                  <img id="thumb_2" src="img/thumbs-2.png" alt="Vestido Must-Have Sewatshirt 02" class="img-fluid">
+                  <img id="thumb_3" src="img/thumbs-3.png" alt="Vestido Must-Have Sewatshirt 03" class="img-fluid">
                 </div>
-
             </div>
+            <!-- End Image Product / Begin Product Details -->
             <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-xs-12">
+              <!-- Reference and Social Media -->
               <small>Ref.: MO8992</small>
               <div class="social-media-icons">
                 <a href="#"><img src="img/facebook-share.png" alt="Compartilhar no Facebook" /></a>
                 <a class="twitter-icon" href="#"><img src="img/twitter-tweet.png" alt="Twitter Tweet" /></a>
                 <a class="pinterest-icon" href="#"><img src="img/pinterest-pin.png" alt="Pinterest Pin" /></a>
               </div>
+              <!-- Name and Price -->
               <div class="product-details">
-
                 <h1 ng-repeat="name in names">{{ name }}</h1>
                 <h2 class="old-price">R$ 22,80</h2>
                 <h3 class="price">R$ 15,00</h3>
                 <p>3x de R$ 5,00 sem juros</p>
-
+                <!-- Size -->
                 <div class="form-group col-xl-5 col-lg-5 col-md-6 col-sm-12 col-xs-12">
                   <label for="size">Tamanho</label>
                   <select class="custom-select mr-sm-2" id="size">
                     <option ng-repeat="size in sizes" value ="{{size}}">Tam. {{size}}</option>
                   </select>
                 </div>
-
+                <!-- Button Add to cart and Wishlist -->
                 <button class="btn btn-lg add-to-cart" href="#">Adicionar à Sacola</button>
-
                 <button class="add-to-wishlist" ng-click="addWishlist()">
                   <img src="img/wishlist.png" alt="Adicionar a lista de desejos" /> Lista de Desejos
                 </button>
-
+                <!-- Display Wishlist Information -->
                 <div id="wishlist"></div>
-
+                <!-- Product Features -->
                 <div class="product-description">
                   <p>A French terry sweatshirt dress featuring long raglan sleeves. Round neckline. Banded trim. Kit. Lightweight.</p>
-
                   <ul>
                     <li>34" approx. lenght from hight point sholder to hem, 38" chest, 36" waist, 30" sleeve lenght from high point sholder</li>
                     <li>Measured from Small</li>
@@ -120,29 +125,29 @@
                     <li>Imported</li>
                   </ul>
                 </div>
-
+                <!-- Shipping Details -->
                 <div class="form-group">
                   <label for="zipCode">Frete e Prazo</label>
                   <div class="form-inline">
                     <input class="form-control col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12" id="zipCode" />
-                    <button type="submit" class="btn btn-shipping-calc">Calcular</button>
+                    <button type="submit" ng-click="displayShipping()" class="btn btn-shipping-calc">Calcular</button>
                   </div>
                 </div>
-
-                <ul class="shipping-results">
-                  <li>PAC: R$ 18,30 - 7 dias úteis</li>
-                  <li>SEDEX: R$ 26,00 - 4 dias úteis</li>
+                <!-- Shipping Results -->
+                <ul id="shippingResults">
+                  <li ng-repeat="shippings in shipping">{{ shippings.type }}: R$ {{ shippings.price }} - {{ shippings.deadline }} dias úteis</li>
                 </ul>
-
               </div>
             </div>
           </div>
+          <!-- End Product Details / Begin Other Products -->
           <div class="row justify-content-center similar-products-title">         
             <h1>Aproveite Também</h1>
           </div>
           <div class="row justify-content-center similar-products"> 
             <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10"> 
               <div class="row">
+                <!-- Product 1 -->
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
                   <a href="#">
                     <img src="img/bitmap-copy-5.png" class="img-fluid" alt="Saia Global Girl Bodycon">
@@ -151,7 +156,7 @@
                   <h3>R$ 30,00</h3>
                   <p>3x de R$ 10,00 sem juros</p>
                 </div>
-
+                <!-- Product 2 -->
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
                   <a href="#">
                     <img src="img/bitmap-copy-3.png" class="img-fluid" alt="Vestido Must-Have Sweatshirt">
@@ -160,7 +165,7 @@
                   <h3>R$ 15,00</h3>
                   <p>3x de R$ 5,00 sem juros</p>
                 </div>
-
+                <!-- Product 3 -->
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
                   <a href="#">
                     <img src="img/bitmap-copy-4.png" class="img-fluid" alt="Mini Saia Day Dreamer Abstract">
@@ -169,7 +174,7 @@
                   <h3>R$ 15,00</h3>
                   <p>3x de R$ 5,00 sem juros</p>
                 </div>
-
+                <!-- Product 4 -->
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
                   <a href="#">
                     <span class="badge badge-dark">30% off</span>
@@ -182,9 +187,11 @@
               </div>
             </div>
           </div>
+          <!-- End Content / Begin Footer -->
           <div class="row justify-content-center footer">
             <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10"> 
               <div class="row">
+                <!-- Footer Col 1 -->
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
                   <h2>Institucional</h2>
                   <ul>
@@ -192,7 +199,7 @@
                     <li><a href="#">Contato</a></li>
                   </ul>
                 </div>
-
+                <!-- Footer Col 2 -->
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
                   <h2>Ajuda & Suporte</h2>
                   <ul>
@@ -201,7 +208,7 @@
                     <li><a href="#">Procon RJ</a></li>
                   </ul>
                 </div>
-
+                <!-- Footer Col 3 -->
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
                   <h2>Newsletter</h2>
                   <div class="form-inline">
@@ -209,7 +216,7 @@
                     <button type="submit" class="btn btn-lg btn-newsletter">Assinar</button>
                   </div>
                 </div>
-
+                <!-- Footer Col 4 -->
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
                   <h2>Redes Sociais</h2>
                   <ul>
@@ -219,41 +226,42 @@
                   </ul>
                 </div>
               </div>
+              <!-- Footer Text -->
               <div class="row footer-text">
-                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                      <img src="img/logo-s.png" class="img-fluid" alt="Loja da Vanessa">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu arcu imperdiet, malesuada turpis ut, varius risus. Aenean consequat lorem vel sem porta, at condimentum elit porttitor. Donec in vulputate ex. Integer efficitur molestie sem blandit dictum.</p>
-                  </div>
-  
-                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 flags">
-                    <img src="img/f-visa.png" alt="Aceitamos Visa" />
-                    <img src="img/f-mastercard.png" alt="Aceitamos Mastercard" />
-                    <img src="img/f-elo.png" alt="Aceitamos Elo" />
-                    <img src="img/f-diners.png" alt="Aceitamos Diners" />
-                    <img src="img/f-amex.png" alt="Aceitamos American Express" />
-                    <img src="img/f-boleto.png" alt="Aceitamos Boleto" />
-                    <img src="img/100x46_fundo_branco.png" alt="Site seguro, validado por Certsign" />
-                  </div>
-
+                <!-- About Us -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                    <img src="img/logo-s.png" class="img-fluid" alt="Loja da Vanessa">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu arcu imperdiet, malesuada turpis ut, varius risus. Aenean consequat lorem vel sem porta, at condimentum elit porttitor. Donec in vulputate ex. Integer efficitur molestie sem blandit dictum.</p>
                 </div>
+                <!-- Means of payment -->
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 flags">
+                  <img src="img/f-visa.png" alt="Aceitamos Visa" />
+                  <img src="img/f-mastercard.png" alt="Aceitamos Mastercard" />
+                  <img src="img/f-elo.png" alt="Aceitamos Elo" />
+                  <img src="img/f-diners.png" alt="Aceitamos Diners" />
+                  <img src="img/f-amex.png" alt="Aceitamos American Express" />
+                  <img src="img/f-boleto.png" alt="Aceitamos Boleto" />
+                  <img src="img/100x46_fundo_branco.png" alt="Site seguro, validado por Certsign" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Optional JavaScript -->
+    <!-- JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Jquery -->
     <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
     <script src='js/jquery.elevatezoom.js'></script>
-
     <script src='js/zoomProduct.js'></script> 
 
+    <!-- Angular JS -->
     <script src="js/angular/angular.min.js"></script>
     <script src="js/app.module.js"></script>
-    
-    <!-- controllers -->
     <script src="js/produtoController.js"></script>
 
+    <!-- Zoom Image Configuration -->
     <script>
     $('#zoom_01').elevateZoom({
       zoomType: "inner",
@@ -262,6 +270,8 @@
       zoomWindowFadeOut: 750
     }); 
     </script>
+
+    <!-- Popper and Bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>

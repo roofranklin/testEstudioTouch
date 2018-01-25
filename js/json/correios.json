@@ -1,0 +1,14 @@
+[
+  {  
+    "cod":1,
+    "type":"PAC",
+    "price":"18,30",
+    "deadline":"7"
+  },
+  {  
+    "cod":2,
+    "type":"SEDEX",
+    "price":"26,00",
+    "deadline":"3"
+  }
+]
